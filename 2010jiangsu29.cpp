@@ -73,5 +73,5 @@ void ii3(){
 int main(){
 //	il[1][1].l=il[1][2].l=il[1][3].l=il[1][4].l=1;
 	ii3();
-	printf("%d/%d",k,m);
+	printf("%lld/%lld",k,m);
 }
