@@ -1,0 +1,39 @@
+#include<cstdio>
+#include<cstdlib>
+#include<ctime>
+using namespace std;
+long long i,j,k,n,m,il[5][5][4],ww,ll,rr;
+//1=A 0=a
+inline bool bl(){
+	ww=(rand()+rand()+rand())%2;
+//	if(ww)++ll;else ++rr;
+	return ww;
+}
+int main(){
+	il[1][1][0]=il[1][2][0]=il[1][3][0]=il[1][4][0]=1;
+    scanf("%lld",&n);
+	srand(time(NULL));
+    while(n--){
+//    srand(rand());
+	il[2][3][0]=il[1][1][bl()];il[2][3][1]=il[1][2][bl()];
+
+    il[3][1][0]=il[2][3][bl()];il[3][1][1]=1;
+
+	il[2][5][0]=il[1][3][bl()];il[2][5][1]=il[1][4][bl()];
+
+    il[3][2][0]=il[2][5][bl()];il[3][2][1]=1;
+
+	il[4][1][0]=il[3][1][bl()];il[4][1][1]=il[3][2][bl()];
+
+	il[4][2][0]=il[3][1][bl()];il[4][2][1]=il[3][2][bl()];
+	++m;
+	if(il[4][2][0]==il[4][1][0]&&il[4][2][1]==il[4][1][1]&&!il[4][2][0]&&!il[4][1][1])++k;
+//	printf("%lld\n",k);
+/*    printf("ii3 %c%c  ii5 %c%c iii1 %c%c  iii2 %c%c  iiii1 %c%c  iiii2 %c%c\n",
+	        (il[2][3][0])?'A':'a',(il[2][3][1])?'A':'a',(il[2][5][0])?'A':'a',(il[2][5][1])?'A':'a',
+			(il[3][1][0])?'A':'a',(il[3][1][1])?'A':'a',(il[3][2][0])?'A':'a',(il[3][2][1])?'A':'a',
+			(il[4][1][0])?'A':'a',(il[4][1][1])?'A':'a',(il[4][2][0])?'A':'a',(il[4][2][1])?'A':'a'
+			);*/
+}
+	printf("%lld/%lld",k,m);
+}
