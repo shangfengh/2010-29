@@ -38,4 +38,3 @@ int main(){
 }
 	printf("%lld/%lld",k,m);
 }
-//0.016998292
